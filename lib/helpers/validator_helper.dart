@@ -1,5 +1,12 @@
 class ValidatorHelper {
   static String isValidText(String text) {
-    return text.isEmpty ? 'Campo obrigatório' : null;
+    if (text.isEmpty) {
+      return 'Campo Obrigatório';
+    }
+    var valor = double.parse(text);
+    if (valor <= 0) {
+      return 'Apenas valores Positivos';
+    }
+    return null;
   }
 }
